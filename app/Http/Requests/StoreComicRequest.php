@@ -13,7 +13,7 @@ class StoreComicRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,9 +24,9 @@ class StoreComicRequest extends FormRequest
     public function rules()
     {
         return [
-            "title" => "required|min:10|max:255",
-            "price" => "required|number|min:1|max:5",
-            "sale_date" => "required|date_format:dd-mm-yyyy",
+            "title" => "required|min:1|max:255",
+            "price" => "required|numeric",
+            "sale_date" => "required|date_format:DateTime",
             "description" => "required|string",
             "series" => "boolean"
         ];
@@ -38,6 +38,8 @@ class StoreComicRequest extends FormRequest
             "title.min" =>  "Il titolo deve avere almeno :min caratteri",
             "title.max" =>  "Il titolo deve avere massimo :max caratteri",
             "price.required" => "Il prezzo è obbligatorio",
+            "description.required" => "La descrizione è obbligatorio",
+            "sale_date.date_format" => "il format inserito è sbagliato"
         ];
     }
 }

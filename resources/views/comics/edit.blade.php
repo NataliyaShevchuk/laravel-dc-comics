@@ -30,7 +30,7 @@
                             <input class="form-check-input" type="checkbox" name="series" id="flexCheckDefault"
                             {{ $data->series ? 'checked' : '' }}>
                             <label class="form-check-label" for="flexCheckDefault">
-                                Policy on Privacy
+                                Serie
                             </label>
                         </div>
                     </div>
